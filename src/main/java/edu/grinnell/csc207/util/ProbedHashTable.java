@@ -250,9 +250,8 @@ public class ProbedHashTable<K, V> implements HashTable<K, V> {
     // Report activity, if appropriate
     if (REPORT_BASIC_CALLS && (reporter != null)) {
       reporter.report("pairs[" + index + "] = " + key + ":" + value);
+      ++this.size;
     } // if reporter != null
-    // Note that we've incremented the size.
-    ++this.size;
     // And we're done
     return result;
   } // set(K, V)
