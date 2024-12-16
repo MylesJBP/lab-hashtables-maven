@@ -159,6 +159,29 @@ public class HashTableExperiments {
    */
   public static void removeExpt(PrintWriter pen,
       HashTable<String, String> htab) {
-    // STUB
+        htab.reportBasicCalls(true);
+        htab.set("alpha", "alpha");
+        htab.dump(pen);
+        htab.set("beta", "beta");
+        htab.dump(pen);
+        htab.set("bravo", "bravo");
+        htab.dump(pen);
+        htab.set("beta", "max");
+        htab.dump(pen);
+        htab.reportBasicCalls(false);
+        checkGet(pen, htab, "bravo");
+        pen.println();
+        // remove them all
+        htab.remove("alpha");
+        htab.dump(pen);
+        htab.remove("beta");
+        htab.dump(pen);
+        htab.remove("bravo");
+        htab.dump(pen);
+        // htab.remove("beta");
+        // htab.dump(pen);
+        htab.reportBasicCalls(false);
+        checkGet(pen, htab, "bravo");
+        pen.println();
   } // removeExpt(PrintWriter, HashTable)
 } // class HashTableExperiments
